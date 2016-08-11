@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec docker run -it \
+exec docker run -it --rm \
      -v /tmp/.X11-unix:/tmp/.X11-unix \
      -e DISPLAY=unix$DISPLAY \
      -v /etc/passwd:/etc/passwd:ro \
