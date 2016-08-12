@@ -2,7 +2,11 @@
 
 exec docker run -it --rm \
      -v /tmp/.X11-unix:/tmp/.X11-unix \
+     -v $HOME/.Xauthority:$HOME/.Xauthority \
      -e DISPLAY=unix$DISPLAY \
+     -e XAUTHORITY \
+     -e HOME \
+     -u $(id -u) -w "$HOME" \
      -v /etc/passwd:/etc/passwd:ro \
      -v /etc/group:/etc/group:ro \
      --name anki \
