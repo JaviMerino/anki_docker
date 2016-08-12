@@ -8,6 +8,7 @@ exec docker run -it --rm \
      -e HOME \
      -u $(id -u) -w $HOME \
      -v /etc/passwd:/etc/passwd:ro \
+     -v $HOME/Documentos/Anki:$HOME/Documents/Anki \
      -v /etc/localtime:/etc/localtime:ro \
      --name anki \
      anki:latest
