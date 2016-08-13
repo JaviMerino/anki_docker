@@ -5,6 +5,8 @@ exec docker run -it --rm \
      -v $HOME/.Xauthority:$HOME/.Xauthority \
      -e DISPLAY=unix$DISPLAY \
      -e XAUTHORITY \
+     --device /dev/snd \
+     --group-add audio \
      -e HOME \
      -u $(id -u) -w $HOME \
      -v /etc/passwd:/etc/passwd:ro \
