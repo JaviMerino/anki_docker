@@ -4,12 +4,16 @@ MAINTAINER Javi Merino <merino.jav@gmail.com>
 
 # Reasons for each package:
 #   - anki
+#   - lame: to record sounds
 #   - locales: anki needs a UTF-8 locale
 #   - mplayer: to play sounds
+#   - sox: to record sounds
 RUN apt-get update && apt-get install -y \
     anki \
+    lame \
     locales \
-    mplayer
+    mplayer \
+    sox
 
 # anki needs a UTF-8 locale
 RUN echo en_GB.UTF-8 UTF-8 >> /etc/locale.gen
